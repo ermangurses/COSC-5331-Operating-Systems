@@ -79,7 +79,6 @@ int main(int argc, char *argv[]){
          temp[i] = argv[i]; 
          i++;
     }
-
     printf("Main: creating thread %d\n", t);
     rc = pthread_create(&threadID1, NULL, vow, (void *)t); 
     printf("Main: creating thread %d\n", t+1);
