@@ -19,8 +19,6 @@
 #include <time.h>
 #include <sys/time.h>
 #define MAX_THREADS 512
-
-
 //*********************************************************
 //
 // Function Prototypes
@@ -146,12 +144,11 @@ int main( int argc, char *argv[] ){
 //
 // Return Value
 // ------------
-// void                         no return value
+// void                          no return value
 //
 // Value Parameters
 // ----------------
-//                                 no Value Parameters 
-// 
+//                               no Value Parameters 
 //
 // Reference Parameters
 // --------------------
@@ -159,16 +156,15 @@ int main( int argc, char *argv[] ){
 //
 // Local Variables
 // ---------------
-// ii            int                Loop Iteration Variable
-// seed            unsigned int    seeder for random function
-// hit_pointer    unsigned int        
-// rand_no_x    double          Random number for x coordinate
-// rand_no_y    double            Random number for y coordinate
+// ii            int             Loop Iteration Variable
+// seed          unsigned int    seeder for random function
+// hit_pointer   unsigned int        
+// rand_no_x     double          Random number for x coordinate
+// rand_no_y     double          Random number for y coordinate
 // local_hits    int                
 //
-//
 //*******************************************************************
-void *compute_pi( void *s ){
+void * compute_pi( void *s ){
   unsigned int seed;
   int ii;
   unsigned int *hit_pointer;
@@ -183,7 +179,10 @@ void *compute_pi( void *s ){
   for( ii=0; ii < sample_points_per_thread; ii++ ){
     rand_no_x = (double) (rand_r( &seed ))/(double)RAND_MAX;    
     rand_no_y = (double) (rand_r( &seed ))/(double)RAND_MAX;
-    if(((rand_no_x - 0.5) * (rand_no_x - 0.5) + (rand_no_y - 0.5) * (rand_no_y - 0.5)) < 0.25)
+    if( ( (rand_no_x - 0.5) * 
+          (rand_no_x - 0.5) + 
+          (rand_no_y - 0.5) * 
+          (rand_no_y - 0.5) ) < 0.25 )
       local_hits++;
       seed *= ii;
     }
