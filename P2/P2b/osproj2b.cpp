@@ -137,7 +137,7 @@ void *Fibonacci(void *t){
         sequenceOfFibonacci[0] = 0;
         sequenceOfFibonacci[1] = 1;
     }else{
-         // if the user entered greater than 1    
+        // if the user entered greater than 1    
         sequenceOfFibonacci[0] = 0;
         sequenceOfFibonacci[1] = 1;
         // Create the fibonacci sequence  and assign it to the array    
@@ -145,7 +145,7 @@ void *Fibonacci(void *t){
             sequenceOfFibonacci[i] =     
             sequenceOfFibonacci[i-1] + sequenceOfFibonacci[i-2];  
         }// for
-      }// if 
-      printf("Thread %d finished...\n",tid);
+    }// if 
+    printf("Thread %d finished...\n",tid);
     pthread_exit(NULL);
 }
