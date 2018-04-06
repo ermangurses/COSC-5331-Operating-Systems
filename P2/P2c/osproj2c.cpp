@@ -98,11 +98,11 @@ int main(int argc, char *argv[]){
 //
 // Return Value
 // ------------
-// void                         no return value
+// void                         No return value
 //
 // Value Parameters
 // ----------------
-//                                 no Value Parameters 
+//                              No Value Parameters 
 // 
 //
 // Reference Parameters
@@ -111,7 +111,7 @@ int main(int argc, char *argv[]){
 //
 // Local Variables
 // ---------------
-// vowTemp        char            Keeps current word
+// vowTemp        char          Keeps current word
 //
 //********************************************************************
 void *vow(void *t){
