@@ -28,8 +28,6 @@
 #include <sys/stat.h>
 using namespace std;
 
-
-
 //*********************************************************
 //
 // Function Prototypes
@@ -92,18 +90,18 @@ extern "C"
 // jj            int             Loop Iteration Variable
 // i             int             Loop Iteration Variable
 // rFlag         int             Flag to check whether r is used first 
-//                               ime or not
+//                                 time or not
 // rArgument     int             Checks argument of r is proper range
 // location      int             Finds proper location in string array
 // retval        int             Temporary Return Value
 // tempCharArray char            It is a pointer of char it keeps 
 //                                 temporary command string
 // pch           char            It is a pointer of char it keeps 
-//                               temporary tokens
+//                                 temporary tokens
 // toks          char            It is a pointer of char it keeps 
-//                               tokens
+//                                 tokens
 // pid           pid_t           It goes to fork operation
-//*******************************************************************
+//********************************************************************
 int main( ){
   // local variables
   int i,
@@ -267,24 +265,24 @@ int main( ){
 //
 // Return Value
 // ------------
-// int      i                   returns location of last enrty of
-//                                history array.
+// int      i                    Returns location of last enrty of
+//                                 history array.
 //
 // Value Parameters
 // ----------------
-// int        i                    it is previous location of entry
+// int        i                  It is previous location of entry
 // 
 //
 // Reference Parameters
 // --------------------
 // toks     char                 The location where toks's reference
-//                                is found
-// history     string[]            The location of first element in the 
-//                                history array
+//                                 is found
+// history     string[]          The location of first element in the 
+//                                 history array
 //
 // Local Variables
 // ---------------
-// tempStr        string            Temporary string for swap operation
+// tempStr        string         Temporary string for swap operation
 // 
 //*******************************************************************
 int guishHistory( char ** toks, string history[], int i){
@@ -325,21 +323,21 @@ int guishHistory( char ** toks, string history[], int i){
 //
 // Return Value
 // ------------
-// void                         no return value
+// void                         No return value
 //
 // Value Parameters
 // ----------------
-// pid        pid_t                child's process id
+// pid        pid_t             Child's process id
 // 
 //
 // Reference Parameters
 // --------------------
-// toks     char                 The location where toks's reference
+// toks     char                The location where toks's reference
 //                                is found
 //
 // Local Variables
 // ---------------
-// stat        int        status of child
+// stat        int              Status of child
 // 
 //*******************************************************************
 void parent(char **toks, pid_t pid ){
@@ -600,10 +598,9 @@ void child(char **toks ){
 // counter      static int        Counter for cursor number on shell
 // cwd          string            Current working directory indicator
 //                                  for cursor
-// cursorTime   string            Cariable for date and time information
-//                                on the cursor
-//
-//*******************************************************************
+// cursorTime   string            Cariable for date and time 
+//                                  information on the cursor
+//********************************************************************
 void type_prompt(){     
     // local variables
     size_t delimeterPos;
@@ -664,7 +661,7 @@ void type_prompt(){
 // ---------------
 // 
 //
-//*******************************************************************
+//********************************************************************
 void ctrlC_handler( int signo ){ 
   // count howmany times ctrl c is entered
   ctrlC_counter++; 
@@ -694,7 +691,7 @@ void ctrlC_handler( int signo ){
 // ---------------
 // 
 //
-//*******************************************************************
+//********************************************************************
 void ctrlBS_handler( int signo ){
    // count howmany times ctrl back slash is entered
   ctrlBS_counter++;
@@ -723,7 +720,7 @@ void ctrlBS_handler( int signo ){
 // ---------------
 // 
 //
-//*******************************************************************
+//********************************************************************
 void ctrlZ_handler( int signo ){
     // count howmany times ctrl_z is entered
   ctrlZ_counter++; 
@@ -752,7 +749,7 @@ void ctrlZ_handler( int signo ){
 // Local Variables
 // ---------------
 //
-//*******************************************************************
+//********************************************************************
 void forkOperation(char ** toks, pid_t pid){
     // fork operation
     pid = fork();            
@@ -766,5 +763,3 @@ void forkOperation(char ** toks, pid_t pid){
          parent(toks,pid);       
     }
 }
-
-
