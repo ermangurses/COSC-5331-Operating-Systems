@@ -156,10 +156,8 @@ bool openInputFile(ifstream & inFile, char *argv[]){
 //********************************************************************
 void readInputFile(ifstream & inFile){
     
-
     string tempString1,
            tempString2;
-
     getline(inFile, tempString1); 
     numberOfProcesses = atoi(tempString1.data());
     allocationMatrix  = new int*[numberOfProcesses];
@@ -170,9 +168,7 @@ void readInputFile(ifstream & inFile){
     available    =  new int[numberOfResourceType]; 
     request      =  new int[numberOfResourceType+1]; 
     getline(inFile, tempString1); 
-
     for(int i = 0; i < numberOfProcesses; i++){
-
     	allocationMatrix[i] = new int[numberOfResourceType]; 
         getline(inFile, tempString1); 
         size_t index = 0;
@@ -184,7 +180,6 @@ void readInputFile(ifstream & inFile){
             index += 2;
         }
     }
-    
     getline(inFile, tempString1);
     for(int i = 0; i < numberOfProcesses; i++){
         maxMatrix[i] = new int[numberOfResourceType];
@@ -207,9 +202,7 @@ void readInputFile(ifstream & inFile){
     }
     getline(inFile, tempString1); 
     getline(inFile, tempString1);
-    
-    index = 0;
-    
+    index = 0; 
     for(int i = 0; i < numberOfResourceType+1; i++){
     	tempString2 = tempString1.at(index);
         request[i] =  atoi(tempString2.data()); 
@@ -322,15 +315,13 @@ void printfColumn(){
 // vowTemp      char         Keeps current word
 //
 //*******************************************************************
-void printAll(){
-    
+void printAll(){ 
     printf("There are %d processes in the system\n\n",numberOfProcesses);
     printf("There are %d resource types\n\n",numberOfResourceType);
     printf("The Allocation Matrix is...\n");
     printf("   ");
     printfColumn();
     printf("\n");
-
     for(int i = 0; i < numberOfProcesses; i++){    
     
         printf("%d: ",i);
@@ -339,7 +330,6 @@ void printAll(){
         }
         printf("\n");
     }
-
     printf("\nThe Max Matrix is...\n");    
     printf("   ");
     printfColumn();
@@ -352,7 +342,6 @@ void printAll(){
         }
         printf("\n");
     }
-
     printf("\nThe Need Matrix is...");
     printf("\n");    
     printf("   ");
@@ -479,7 +468,7 @@ void isSafe2(){
                  isSafe3(i);
             }
             goSafe3 = true;
-         }
+        }
     }
     isSafe4();    
 }
