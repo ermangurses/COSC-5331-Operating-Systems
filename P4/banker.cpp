@@ -30,7 +30,7 @@ using namespace std;
 bool openInputFile(ifstream & inFile, char *argv[]); 
 void readInputFile(ifstream & inFile);
 void calculateNeedMatrix();
-int  printAll();
+void printAll();
 void isSafe1();
 void isSafe2();
 void isSafe3(int i);
@@ -82,7 +82,7 @@ bool isSafeState = true,
 // ---------------
 // threadID1    pthread_t      Keeps thread ID.
 // threadID2    pthread_t      Keeps thread ID.
-// rc            int           Control flag to check creation of 
+// rc           int            Control flag to check creation of 
 //                               thread succesful or not. 
 // i            int            Loop Iteration Variable.
 // t            int            Visual ID of thread.
@@ -256,20 +256,20 @@ void calculateNeedMatrix(){
 //
 // Return Value
 // ------------
-// void                         no return value
+// void                       No return value
 //
 // Value Parameters
 // ----------------
-//                                 no Value Parameters 
+//                            No Value Parameters 
 // 
 //
 // Reference Parameters
 // --------------------
-// t            char            Visual ID of thread.           
+// t            char          Visual ID of thread.           
 //
 // Local Variables
 // ---------------
-// vowTemp       char            Keeps current word
+// vowTemp      char          Keeps current word
 //
 //*******************************************************************
 void printfColumn(){   
@@ -306,23 +306,23 @@ void printfColumn(){
 //
 // Return Value
 // ------------
-// int                       no return value
+// Void                      No return value
 //
 // Value Parameters
 // ----------------
-//                            no Value Parameters 
+//                           No Value Parameters 
 // 
 //
 // Reference Parameters
 // --------------------
-// t            char          Visual ID of thread.           
+// t            char         Visual ID of thread.           
 //
 // Local Variables
 // ---------------
-// vowTemp      char          Keeps current word
+// vowTemp      char         Keeps current word
 //
 //*******************************************************************
-int printAll(){
+void printAll(){
     
     printf("There are %d processes in the system\n\n",numberOfProcesses);
     printf("There are %d resource types\n\n",numberOfResourceType);
@@ -377,7 +377,7 @@ int printAll(){
         printf("\n\nTHE SYSTEM IS IN A SAFE STATE!\n");
     }else{
         printf("\n\nTHE SYSTEM IS NOT IN A SAFE STATE!\n");
-        return 0;
+        return;
     }
     printf("\nThe Request Vector is...\n");
     printf("  ");
@@ -415,11 +415,11 @@ int printAll(){
 //
 // Return Value
 // ------------
-// void                     no return value
+// void                     No return value
 //
 // Value Parameters
 // ----------------
-//                          no Value Parameters 
+//                          No Value Parameters 
 // 
 //
 // Reference Parameters
@@ -491,11 +491,11 @@ void isSafe2(){
 //
 // Return Value
 // ------------
-// void                     no return value
+// void                     No return value
 //
 // Value Parameters
 // ----------------
-//                          no Value Parameters 
+//                          No Value Parameters 
 // 
 //
 // Reference Parameters
@@ -521,11 +521,11 @@ void isSafe3(int i){
 //
 // Return Value
 // ------------
-// void                     no return value
+// void                     No return value
 //
 // Value Parameters
 // ----------------
-//                          no Value Parameters 
+//                          No Value Parameters 
 // 
 //
 // Reference Parameters
@@ -552,11 +552,11 @@ void isSafe4(){
 //
 // Return Value
 // ------------
-// void                     no return value
+// void                     No return value
 //
 // Value Parameters
 // ----------------
-//                          no Value Parameters 
+//                          No Value Parameters 
 // 
 //
 // Reference Parameters
