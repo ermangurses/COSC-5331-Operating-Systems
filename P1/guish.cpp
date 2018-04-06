@@ -49,8 +49,7 @@ void guishHistoryOptionR( char ** toks, string history[], int i);
 //
 //*********************************************************
 using namespace std;
-extern "C"
-{
+extern "C"{
   extern char **gettoks();
 } 
 
@@ -114,12 +113,12 @@ int main( ){
   string histZero;
 
   // initialize local variables
-  i =  0;
-  rFlag = 0;
+  i         = 0;
+  rFlag     = 0;
   rArgument = 0;
-  location = 0;
-  toks = NULL;
-  retval = 0;
+  location  = 0;
+  toks      = NULL;
+  retval    = 0;
   pid_t  pid;
  
   char * tempCharArray = new char;
