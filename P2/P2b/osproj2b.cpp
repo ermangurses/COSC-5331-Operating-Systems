@@ -24,7 +24,6 @@
 //********************************************************************
 void *Fibonacci(void *t);
 
-
 //********************************************************************
 //
 // Global Variables
@@ -32,7 +31,6 @@ void *Fibonacci(void *t);
 //********************************************************************
 int numbersOfFibonacci = 0; 
 int * sequenceOfFibonacci;
-
 
 //********************************************************************
 //
@@ -69,7 +67,6 @@ int main(int argc, char *argv[]){
     // Local variables
     pthread_t threadID;
     int rc, t = 0;
-    
     // Check the user whether is entered command line a sequence 
     // number or not. 
     if(argv[1] == NULL){
@@ -78,17 +75,12 @@ int main(int argc, char *argv[]){
         "an argument for argv[1]\n");
         exit(0);
     }
-    
     // Parse sequence number from ASCII to Integer
     numbersOfFibonacci = atoi(argv[1]);
-    
     // Allocate memory for the sequence 
     sequenceOfFibonacci = 
                 (int *)malloc((numbersOfFibonacci+1)*sizeof(int));
-    
-
-    printf("Main: creating thread %d\n", t);
-        
+    printf("Main: creating thread %d\n", t);     
     // Create a new thread    
     rc = pthread_create(&threadID, NULL, Fibonacci, (void *)t); 
     
@@ -97,17 +89,13 @@ int main(int argc, char *argv[]){
         printf("ERROR; return code from pthread_create() is %d\n", rc);
         exit(-1);
     }
-    
     // Wait Child thread until it finished its job.
     pthread_join( threadID, NULL); 
-    
     printf("Main: printing the results...\n\n");
-    
     // Print Fibonacci sequence to screen
     for (int i=0; i <= numbersOfFibonacci; i++){
         printf("Fibonacci %d: %d\n",i, sequenceOfFibonacci[i]);      
     }// for
-    
     printf("\nMain: program completed.\n");
     pthread_exit(NULL);
 }
@@ -133,8 +121,8 @@ int main(int argc, char *argv[]){
 //
 // Local Variables
 // ---------------
-// tid            int     Visual ID of thread. 
-//*******************************************************************
+// tid           int      Visual ID of thread. 
+//********************************************************************
 void *Fibonacci(void *t){
     int tid;
     tid = (int)t;
