@@ -302,7 +302,7 @@ bool IsPrime(int number){
 //
 // Reference Parameters
 // --------------------
-//*threadid                  Keeps id of thread
+// *threadid                 Keeps id of thread
 //
 // Local Variables
 // ---------------
@@ -368,7 +368,7 @@ void *Producer(void *threadid){
 //
 // Reference Parameters
 // --------------------
-//*threadid                   Keeps id of thread
+// *threadid                  Keeps id of thread
 //
 // Local Variables
 // ---------------
@@ -426,7 +426,7 @@ void *Consumer(void* threadid){
 //
 // Value Parameters
 // ----------------
-//  int    id_ptr              Consumet Id        
+//  int     id_ptr             Consumet Id        
 //
 // Reference Parameters
 // --------------------
